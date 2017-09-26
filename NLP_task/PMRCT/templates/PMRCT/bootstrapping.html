@@ -1,0 +1,45 @@
+{% extends 'PMRCT/base.html' %}
+
+{% block content %}
+
+
+    <div id='text-mining'>Text Mining: <span>acquiring phrases concerning genes' abnormal behaviors from clinical evidence</span></div>
+    <button id="input_seed_data" type="button" class="btn btn-default">input seed data</button>
+    <div id="regex">
+        <div class="regex-label">[ Words to produce regular expressions ] </div>
+        <div id="unused_words"><span>{{fixed_role}}: </span>{{unused_content}}</div>
+        <div class="regex-label" style="margin-top:15px;">[ Produced regular expressions ]</div>
+        <ol style="padding-left:17px;">
+        {% for regex_str in regex_strs %}
+            <li class="regex_str">{{ regex_str }}</li>
+        {% endfor %}
+        </ol>
+        
+        <!-- <div class="regex-label">Number of snippets found in clinical evidence by regular expressions: <span>{{regex_all_num}}</span></div> -->
+        <div class="regex-label" style="margin-top:15px;">[ Progress in bootstrapping ]</div>
+        <div id="progress_info1">Collecting phrases form clinical evidence using the regular expressions..</div>
+        <div id="progress_info2"></div>
+        <div id="classification_result">
+            <span id="positive_result"></span>&emsp;
+            <span id="negative_result"></span>&emsp;
+            <span id="unknown_result"></span>&emsp;
+            <div id="new_words" style="padding:20px, 20px, 20px, 20px">
+                <div id="new_behavior"></div>&emsp;
+                <div id="new_change"></div>&emsp;
+                <!-- <div id="new_middle"></div>&emsp; -->
+                <button id="submit_words" type="button" class="btn btn-default">submit new words</button>
+            </div> 
+            <div id="new_phrases" style="padding:20px, 20px, 20px, 20px">
+                <div id="select_new_phrases"></div>
+                <div id='new_phrase_list'></div>
+                <button id="submit_phrases" type="button" class="btn btn-default">submit new phrases</button>
+            </div>            
+        </div>
+    </div>
+<!--     <script>
+        var isSeed = '{{isSeed}}';
+        if(isSeed == 'no'){
+            $('#regex').css('display', 'none');
+        }
+    </script> -->
+{% endblock content %}

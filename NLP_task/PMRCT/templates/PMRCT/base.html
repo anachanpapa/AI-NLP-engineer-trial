@@ -1,0 +1,27 @@
+{% load staticfiles %}
+
+<html>
+    <head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/PMRCT.css' %}">
+        <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="{% static 'PMRCT/js/main.js' %}"></script>
+        <title>AI(NLP) engineer trial</title>
+    </head>
+        <body>
+            <div class="page-header">
+                <h1><a href="/PMRCT/">AI(NLP) engineer trial</a></h1>
+            </div>
+            <div class="content container">
+                <div class="row">
+                    <div class="col-md-12">
+                    {% block content %}
+                    {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </body>
+</html>
