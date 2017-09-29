@@ -125,7 +125,7 @@ elif VECTORIZER == 3:
 #SVD
 if DO_SVD:
     print('start SVD')
-    SVD=TruncatedSVD(200,random_state=40)
+    SVD=TruncatedSVD(200,random_state=42)
     SVD_FIT=SVD.fit_transform(mod_TD)
     mod_TD=pd.DataFrame(SVD_FIT)
 
